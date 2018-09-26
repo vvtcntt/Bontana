@@ -1,0 +1,13 @@
+﻿@model Bontana.Models.TblConfig
+
+<div id="productHot">
+    <div id="sidebarProductHot">
+        <p>Sản phẩm <span style="color:@Model.Color">Tân Á</span> đang bán chạy</p>
+        <a href="" title="">Xem tất cả</a>
+    </div>
+    <div id="contentProductHot">
+        <div class="owl-carousel owl-theme">
+            @Html.Raw(ViewBag.result)
+        </div>
+    </div>
+</div>
