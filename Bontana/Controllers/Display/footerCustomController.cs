@@ -60,7 +60,7 @@ namespace Bontana.Controllers.DisplayCustom
                 for (int i = 0; i < listBaogia.Count; i++)
                 {
                 if(i<5)
-                    resultBaogia.Append("<li class=\"li2\"><a href=\"/bao-gia/bao-gia-" + listBaogia[i].Tag + " \" title=\"Báo giá " + listBaogia[i].Name + "\">› Báo giá " + listBaogia[i].Name + " </a></li>");
+                    resultBaogia.Append("<li class=\"li2\"><a href=\"/bao-gia/" + listBaogia[i].Tag + " \" title=\"Báo giá " + listBaogia[i].Name + "\">› Báo giá " + listBaogia[i].Name + " </a></li>");
 
                 resultMenu.Append("<li><a href=\"/" + listBaogia[i].Tag + "\" title=\"" + listBaogia [i].Name+ "\">" + listBaogia[i].Name + " </a> › </li>");
             }

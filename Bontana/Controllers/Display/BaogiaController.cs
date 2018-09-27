@@ -104,23 +104,23 @@ namespace Bontana.Controllers.Display.Section.Baogia
                 var listId = db.TblGroupProduct.Where(p => p.ParentId == idmenu).Select(p => p.Id).ToList();
                 listId.Add(idmenu);
                 string chuoi = "";
-                var listproduct = db.TblProduct.Where(p => p.Active == true && listId.Contains(p.IdCate.Value)).OrderBy(p => p.Ord).ToList();
+                var listproduct = db.TblProduct.Where(p => p.Active == true && listId.Contains(p.IdCate.Value)).OrderBy(p => p.IdCate).ToList();
                 for (int i = 0; i < listproduct.Count; i++)
                 {
                     chuoi += "<tr>";
                     chuoi += "<td class=\"Ords\">" + (i + 1) + "</td>";
                     chuoi += "<td class=\"Names\">";
                     string note = "";
-                    if (listproduct[i].Sale != null && listproduct[i].Sale != "")
-                        note = "<span>" + listproduct[i].Access + "</span>";
+                    //if (listproduct[i].Sale != null && listproduct[i].Sale != "")
+                    //    note = "<span>" + listproduct[i].Access + "</span>";
 
-                    chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name + " " + note + " </a>";
-                    chuoi += "<span class=\"n2\">Chức năng : " + listproduct[i].NoteInfo + "</span>";
-                    chuoi += "<span class=\"n3\">Trực tiếp từ Bontana Chính Hãng </span>";
+                    chuoi += "<a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\">" + listproduct[i].Name + "   </a>";
+                    chuoi += "<span class=\"n2\">Chức năng : " + listproduct[i].Note + "</span>";
+                    chuoi += "<span class=\"n3\">Sản phẩm Tân Á Đại Thành Chính Hãng </span>";
                     chuoi += " </td>";
-                    chuoi += "<td class=\"Codes\"><a href=\"/Tabs/" + listproduct[i].Code + "\" title=\"" + listproduct[i].Code + "\">" + listproduct[i].Code + "</a></td>";
-                    chuoi += "<td class=\"Wans\"><a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a>" + listproduct[i].Time + "</td>";
-                    chuoi += "<td class=\"Prices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ  <span class=\"n4\">Lắp đặt Free tại Hà Nội, Chuyển hàng toàn quốc</span></td>";
+                    chuoi += "<td class=\"Codes\">" + listproduct[i].Code + "</td>";
+                    chuoi += "<td class=\"Wans\">"+ listproduct[i].Warranty+ "</td>";
+                    chuoi += "<td class=\"Prices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ  <span class=\"n4\">Phân phối toàn quốc - "+listproduct[i].PriceNote + "</span></td>";
                     //chuoi += "<td class=\"Qualitys\">01</td>";
                     //chuoi += "<td class=\"SumPrices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ</td>";
                     chuoi += "<td class=\"Images\"><a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a></td>";

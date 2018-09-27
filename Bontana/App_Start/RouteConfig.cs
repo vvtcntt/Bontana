@@ -22,7 +22,7 @@ namespace Bontana
             routes.MapRoute("newsdetail", "tin-tuc/{Tag}", new { controller = "news", action = "newsDetail", tag = UrlParameter.Optional }, new { controller = "^n.*", action = "^newsDetail$" });
             routes.MapRoute("Tagnews", "TagNews/{Tag}", new { controller = "news", action = "tagNews", tag = UrlParameter.Optional }, new { controller = "^n.*", action = "^tagNews$" });
             routes.MapRoute("Newslist", "0/{Tag}", new { controller = "news", action = "listNews", tag = UrlParameter.Optional }, new { controller = "^n.*", action = "^listNews$" });
-            routes.MapRoute("Bao-gia", "bao-gia/bao-gia-{Tag}", new { controller = "baogia", action = "index", tag = UrlParameter.Optional }, new { controller = "^b.*", action = "^index$" });
+            routes.MapRoute("Bao-gia", "bao-gia/{Tag}", new { controller = "baogia", action = "index", tag = UrlParameter.Optional }, new { controller = "^b.*", action = "^index$" });
             routes.MapRoute(name: "tim-kiem", url: "tim-kiem", defaults: new { controller = "product", action = "search" });
             routes.MapRoute(name: "Error", url: "Error", defaults: new { controller = "Default", action = "Error" });
             routes.MapRoute(name: "Contact", url: "Lien-he", defaults: new { controller = "contactCustom", action = "Index" });
@@ -36,7 +36,7 @@ namespace Bontana
 //    defaults: new { controller = "product", action = "productList" },
 //    constraints: new { tag = new clsUrlConstraint() }
 //);
-            routes.MapRoute(name: "Default", url: "{controller}/{action}/{id}", defaults: new { controller = "Default", action = "Banquyen", id = UrlParameter.Optional }
+            routes.MapRoute(name: "Default", url: "{controller}/{action}/{id}", defaults: new { controller = "Default", action = "index", id = UrlParameter.Optional }
             );
         }
     }

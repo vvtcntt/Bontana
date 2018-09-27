@@ -78,7 +78,7 @@ namespace Bontana.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=thiepvu\\sqlexpress;Initial Catalog=Bontana;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=localhost\\SQL2016; Initial Catalog=viglacer_Bontana.vn;Persist Security Info=True;User ID=viglacer_Bontana.vn;Password=Vanthiep@123;MultipleActiveResultSets=True");
             }
         }
 

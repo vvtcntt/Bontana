@@ -32,10 +32,10 @@
                     <li>Bạn tiết kiệm thêm : <span class="tk">@String.Format("{0:#,#}", Model.Price - Model.PriceSale)đ</span></li>
                 </ul>
                 @if (Model.PriceNote != null && Model.PriceNote != "")
-    {
-            <span class="priceNote">@Model.PriceNote</span>
+                {
+                    <span class="priceNote">@Model.PriceNote</span>
 
-}
+                }
                 <p class="p2">Nơi nào bán rẻ hơn quý khách vui lòng gọi lại chúng tôi sẽ giảm bằng và tặng quà quý khách !</p>
 
                 <ul class="ulInfo">
@@ -52,34 +52,34 @@
                     <li>
                         <i class="fa fa-check-circle-o" aria-hidden="true" style="color:@ViewBag.color"></i> Vat :
                         @if (Model.Vat == true)
-            {
-                <span>Đã bao gồm</span>
-}
-else
-{
-            <span>Chưa bao gồm</span>
-}
+                        {
+                            <span>Đã bao gồm</span>
+                        }
+                        else
+                        {
+                            <span>Chưa bao gồm</span>
+                        }
                     </li>
                     <li>
                         <i class="fa fa-check-circle-o" aria-hidden="true" style="color:@ViewBag.color"></i> Vận chuyển :
 
                         @if (Model.Transport == true)
-            {
-                <span>Giao hàng toàn quốc</span>
-}
-else
-{
-            <span>Vui lòng liên hệ</span>
-}
+                        {
+                            <span>Giao hàng toàn quốc</span>
+                        }
+                        else
+                        {
+                            <span>Vui lòng liên hệ</span>
+                        }
                     </li>
                     <li>
                         <i class="fa fa-check-circle-o" aria-hidden="true" style="color:@ViewBag.color"></i> Tình trạng :
                         @if (Model.Status == true)
-            {<span>Còn hàng</span> }
-else
-{
-            <span>Tạm hết hàng</span>
-}
+                        {<span>Còn hàng</span> }
+                        else
+                        {
+                            <span>Tạm hết hàng</span>
+                        }
                     </li>
                 </ul>
                 <div class="infoDetail">
@@ -94,15 +94,15 @@ else
                 <div class="boxOrder">
                     <div class="order" style="background:@ViewBag.color">
                         @if (Request.Browser.IsMobileDevice)
-            {
-                <a href="/order/OrderAdd?id=@Model.Id&ord=1">Đặt hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                        {
+                            <a href="/order/OrderAdd?id=@Model.Id&ord=1">Đặt hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
 
-}
-else
-{
-            <a rel="miendatwebPopup" href="#popup_content" onclick="CreateOrder(@Model.Id)">Đặt hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                        }
+                        else
+                        {
+                            <a rel="miendatwebPopup" href="#popup_content" onclick="CreateOrder(@Model.Id)">Đặt hàng <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
 
-}
+                        }
                     </div>
                     <div id="service">
                         <span href="" title="" style="color:#ff5a00">
@@ -117,15 +117,15 @@ else
         </div>
         <div id="transports">
             <div class="Tear_Tran tt">
-                <span class="tr1">MIỄN PHÍ LẮP ĐẶT </span>
-                <span class="tr2">Đơn hàng >= 250.00đ tại Hà Nội</span>
+                <span class="tr1"> DỊCH VỤ CHÍNH HÃNG</span>
+                <span class="tr2">Trực tiếp từ Tân Á Đại Thành</span>
             </div>
             <div class="Tear_Tran gh">
                 <span class="tr1">CHUYỂN HÀNG TOÀN QUỐC</span>
                 <span class="tr2">Chuyển hàng, thu tiền tại nhà </span>
             </div>
             <div class="Tear_Tran dh">
-                <span class="tr1">LÀM VIỆC TỪ 8H - 21H30</span>
+                <span class="tr1">LÀM VIỆC TỪ 8H - 20H</span>
                 <span class="tr2">Làm việc cả thứ 7 - CN</span>
             </div>
         </div>
@@ -152,43 +152,46 @@ else
                                 <td>@Model.Size (mm)</td>
                             </tr>
                             <tr>
-            <td>Thương hiệu</td>
-            <td>@ViewBag.manuName</td>
-        </tr>
+                                <td>Thương hiệu</td>
+                                <td>@ViewBag.manuName</td>
+                            </tr>
                             <tr>
                                 <td>Bảo hành</td>
                                 <td>@Model.Warranty Năm</td>
                             </tr>
 
-
-                           
                             @Html.Raw(ViewBag.chuoi)
                         </tbody>
                     </table>
                 </div>
+
+                <div class="clear"></div>
+                <div id="contentBody">
+                    <img style="margin:5px auto; display:block" src="@Model.ImageLinkDetail" alt="@Model.Name" />
+                    <samp style="text-align:center; font-style:italic; display:block">@Model.Name</samp>
+                    @Html.Raw(Model.Content)
+                    @Html.Raw(Model.Parameter)
+                </div>
+
                 @if (Model.Video != null && Model.Video != "")
                 {
                     <h3>Giới thiệu @Model.Name</h3>
                     <div id="videoContent">
                         @if (Request.Browser.IsMobileDevice)
-                        {<iframe width="100%" height="320" src="https://www.youtube.com/embed/@Model.Video?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=allowfullscreen></iframe>
+                        {<iframe width="480" height="320" src="https://www.youtube.com/embed/@Model.Video?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=allowfullscreen></iframe>
 
                         }
                         else
                         {
-                            <iframe width="100%" height="760" src="https://www.youtube.com/embed/@Model.Video?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=allowfullscreen></iframe>
+                            <iframe width="560" height="350" src="https://www.youtube.com/embed/@Model.Video?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=allowfullscreen style="margin:5px auto; display:block"></iframe>
 
                         }
                     </div>
 
                 }
-                <div class="clear"></div>
-                <div id="contentBody">
-                    @Html.Raw(Model.Content)
-                    @Html.Raw(Model.Parameter)
-                </div>
-                <img src="~/Content/Display/images/Bontana-chung-nhan.jpg" />
+                @*<img src="~/Content/Display/images/Bontana-chung-nhan.jpg" />*@
             </div>
+
             <div id="tags">
                 <span><i class="fa fa-tags" aria-hidden="true"></i> Tags: </span> @Html.Raw(ViewBag.chuoitag)
             </div>
@@ -239,37 +242,37 @@ else
                     Bình luận sản phẩm
                 </span>
                 @*<div id="contentComment">
-                    <div id="boxComment">
-                        <input type="text" name="txtComment" id="txtComment" placeholder="Nhập nội dung bình luận ...." />
-                    </div>
-                    <div id="submitComment">
-                        <input type="text" name="txtName" id="txtName" placeholder="Nhập họ và tên" />
-                        <input type="email" name="txtEmail" id="txtEmail" placeholder="Nhập Email" />
-                        <button style="background:@ViewBag.color" type="submit" id="btnComment" name="btnComment">Bình luận</button>
-                        <a href="" style=""><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
-                    </div>
-                    <div id="listComment">
-                            <div class="tearComment">
-                                <span class="nameComment"><i class="fa fa-user-circle" aria-hidden="true"></i> Hoàng Văn Thái</span>
-                                <div class="contentTearCommment">
-                                    Chào anh,
-                                    Với sản phẩm này dùng không bị lỗi thời anh nha , sản phẩm này rất nhiều người ưa chuộng anh nhé .
-                                    Thông tin đến anh.
-                                </div>
-                                <div class="boxLike">
-                                    <a href="" title="">Trả lời</a><a href="" title=""><i class="fa fa-thumbs-up" aria-hidden="true"></i> Thích (10)</a><a href="" title="">10:25PM 25/07/2017</a>
-                                </div>
-                            </div>
-                            <div class="tearComment">
-                                <span class="nameComment"><i class="fa fa-user-circle" aria-hidden="true"></i> Hoàng Văn Thái</span>
-                                <div class="contentTearCommment">
-                                    Chào anh,
-                                    Với sản phẩm này dùng không bị lỗi thời anh nha , sản phẩm này rất nhiều người ưa chuộng anh nhé .
-                                    Thông tin đến anh.
-                                </div>
-                            </div>
+                        <div id="boxComment">
+                            <input type="text" name="txtComment" id="txtComment" placeholder="Nhập nội dung bình luận ...." />
                         </div>
-                </div>*@
+                        <div id="submitComment">
+                            <input type="text" name="txtName" id="txtName" placeholder="Nhập họ và tên" />
+                            <input type="email" name="txtEmail" id="txtEmail" placeholder="Nhập Email" />
+                            <button style="background:@ViewBag.color" type="submit" id="btnComment" name="btnComment">Bình luận</button>
+                            <a href="" style=""><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+                        </div>
+                        <div id="listComment">
+                                <div class="tearComment">
+                                    <span class="nameComment"><i class="fa fa-user-circle" aria-hidden="true"></i> Hoàng Văn Thái</span>
+                                    <div class="contentTearCommment">
+                                        Chào anh,
+                                        Với sản phẩm này dùng không bị lỗi thời anh nha , sản phẩm này rất nhiều người ưa chuộng anh nhé .
+                                        Thông tin đến anh.
+                                    </div>
+                                    <div class="boxLike">
+                                        <a href="" title="">Trả lời</a><a href="" title=""><i class="fa fa-thumbs-up" aria-hidden="true"></i> Thích (10)</a><a href="" title="">10:25PM 25/07/2017</a>
+                                    </div>
+                                </div>
+                                <div class="tearComment">
+                                    <span class="nameComment"><i class="fa fa-user-circle" aria-hidden="true"></i> Hoàng Văn Thái</span>
+                                    <div class="contentTearCommment">
+                                        Chào anh,
+                                        Với sản phẩm này dùng không bị lỗi thời anh nha , sản phẩm này rất nhiều người ưa chuộng anh nhé .
+                                        Thông tin đến anh.
+                                    </div>
+                                </div>
+                            </div>
+                    </div>*@
             </div>
         </div>
 
