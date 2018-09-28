@@ -21,7 +21,7 @@ namespace Bontana.Controllers.DisplayCustom
             ViewBag.h1 = "<h1 class=\"h1\">"+tblconfig.Title+"</h1>";
             ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Bontana.vn/\" />";
             ViewBag.favicon = " <link href=\"" + tblconfig.Favicon + "\" rel=\"icon\" type=\"image/x-icon\" />";
-            //return RedirectToAction("Banquyen");
+            return RedirectToAction("Banquyen");
             return View();
         }
         public PartialViewResult partialdefault()

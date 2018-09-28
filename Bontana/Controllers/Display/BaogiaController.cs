@@ -119,7 +119,7 @@ namespace Bontana.Controllers.Display.Section.Baogia
                     chuoi += "<span class=\"n3\">Sản phẩm Tân Á Đại Thành Chính Hãng </span>";
                     chuoi += " </td>";
                     chuoi += "<td class=\"Codes\">" + listproduct[i].Code + "</td>";
-                    chuoi += "<td class=\"Wans\">"+ listproduct[i].Warranty+ "</td>";
+                    chuoi += "<td class=\"Wans\">"+ listproduct[i].Warranty+ " năm</td>";
                     chuoi += "<td class=\"Prices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ  <span class=\"n4\">Phân phối toàn quốc - "+listproduct[i].PriceNote + "</span></td>";
                     //chuoi += "<td class=\"Qualitys\">01</td>";
                     //chuoi += "<td class=\"SumPrices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ</td>";
