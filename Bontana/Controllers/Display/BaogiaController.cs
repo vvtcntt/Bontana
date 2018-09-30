@@ -24,8 +24,8 @@ namespace Bontana.Controllers.Display.Section.Baogia
                    
  
                     chuoi += "<div class=\"Tear_Baogias\">";
-                    chuoi += "<a href=\"/Bao-gia/Bao-gia-" + listbaogia[i].Tag + "\" title=\"Báo giá " + listbaogia[i].Name + "\"><img src=\"" + tblconfig.Logo + "\" alt=\"Báo giá " + listbaogia[i].Name + "\" /></a>";
-                    chuoi += "<a href=\"/Bao-gia/Bao-gia-" + listbaogia[i].Tag + "\" title=\"Báo giá " + listbaogia[i].Name + "\" class=\"Name\">Báo giá " + listbaogia[i].Name + "</a>";
+                    chuoi += "<a href=\"/Bao-gia/" + listbaogia[i].Tag + "\" title=\"Báo giá " + listbaogia[i].Name + "\"><img src=\"" + tblconfig.Logo + "\" alt=\"Báo giá " + listbaogia[i].Name + "\" /></a>";
+                    chuoi += "<a href=\"/Bao-gia/" + listbaogia[i].Tag + "\" title=\"Báo giá " + listbaogia[i].Name + "\" class=\"Name\">Báo giá " + listbaogia[i].Name + "</a>";
                     chuoi += "</div>";
                  
             }
@@ -123,7 +123,7 @@ namespace Bontana.Controllers.Display.Section.Baogia
                     chuoi += "<td class=\"Prices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ  <span class=\"n4\">Phân phối toàn quốc - "+listproduct[i].PriceNote + "</span></td>";
                     //chuoi += "<td class=\"Qualitys\">01</td>";
                     //chuoi += "<td class=\"SumPrices\">" + string.Format("{0:#,#}", listproduct[i].PriceSale) + "đ</td>";
-                    chuoi += "<td class=\"Images\"><a href=\"/1/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a></td>";
+                    chuoi += "<td class=\"Images\"><a href=\"/san-pham/" + listproduct[i].Tag + "\" title=\"" + listproduct[i].Name + "\"><img src=\"" + listproduct[i].ImageLinkThumb + "\" alt=\"" + listproduct[i].Name + "\" title=\"" + listproduct[i].Name + "\"/></a></td>";
                     chuoi += "</tr>";
                 }
                 ViewBag.chuoi = chuoi;

@@ -31,7 +31,7 @@ namespace Bontana.Controllers.DisplayCustom
                         images = manufactures.ImagesShowroom;
                     result.Append("<div class=\"leftcontentTearLoca\"><img src=\""+ images + "\" alt=\"" + listAddress[i].Name + "\" /></div>");
                     result.Append("<div class=\"rightcontentTearLoca\">");
-                    result.Append("<p class=\"p1\"><span style=\"color:"+manufactures.Color+"\">" + manufactures.Name + "</span> " + listAddress[i].Name + "</p>");
+                    result.Append("<p class=\"p1\"><span style=\"color:"+manufactures.Color+"\">" + listAddress[i].Name + "</p>");
                     result.Append("<p class=\"p2\"> " + listAddress[i].Address + "</p><a href=\"#\" title=\"Địa chỉ chỉ dẫn\"> <i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> Bản đồ đường đi</a>");
                     result.Append("</div>");
                     result.Append("</div>");
@@ -51,7 +51,7 @@ namespace Bontana.Controllers.DisplayCustom
                  var listProduct = db.TblProduct.Where(p => p.Active == true && p.ViewHomes == true  ).OrderByDescending(p => p.DateCreate).Take(5).ToList();
                 for(int i=0;i<listProduct.Count;i++)
                 {
-                    resultProduct.Append("<li class=\"li2\"><a href=\"/san-pham/"+listProduct[i].Tag+ " \" title=\"" + listProduct[i].Name + "\">› " + listProduct[i].Name + " </a></li>");
+                    resultProduct.Append("<li class=\"li2\"><a href=\"/san-pham/"+listProduct[i].Tag+ "\" title=\"" + listProduct[i].Name + "\">› " + listProduct[i].Name + " </a></li>");
                 }
                 ViewBag.resultProduct = resultProduct.ToString() ;
                 var listBaogia = db.TblGroupProduct.Where(p => p.Active == true && p.Baogia == true  ).OrderBy(p => p.Ord).Take(10).ToList();
@@ -62,7 +62,7 @@ namespace Bontana.Controllers.DisplayCustom
                 if(i<5)
                     resultBaogia.Append("<li class=\"li2\"><a href=\"/bao-gia/" + listBaogia[i].Tag + " \" title=\"Báo giá " + listBaogia[i].Name + "\">› Báo giá " + listBaogia[i].Name + " </a></li>");
 
-                resultMenu.Append("<li><a href=\"/" + listBaogia[i].Tag + "\" title=\"" + listBaogia [i].Name+ "\">" + listBaogia[i].Name + " </a> › </li>");
+                resultMenu.Append("<li><a href=\"/" + listBaogia[i].Tag + ".html\" title=\"" + listBaogia [i].Name+ "\">" + listBaogia[i].Name + " </a> › </li>");
             }
             ViewBag.resultMenu = resultMenu.ToString();
                 ViewBag.resultBaogia = resultBaogia.ToString();
