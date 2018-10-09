@@ -21,7 +21,7 @@ namespace Bontana.Controllers.DisplayCustom
             ViewBag.h1 = "<h1 class=\"h1\">"+tblconfig.Title+"</h1>";
             ViewBag.canonical = "<link rel=\"canonical\" href=\"http://Bontana.vn/\" />";
             ViewBag.favicon = " <link href=\"" + tblconfig.Favicon + "\" rel=\"icon\" type=\"image/x-icon\" />";
-            return RedirectToAction("Banquyen");
+            //return RedirectToAction("Banquyen");
             return View();
         }
         public PartialViewResult partialdefault()
@@ -71,7 +71,7 @@ namespace Bontana.Controllers.DisplayCustom
                     result.Append("<div class=\"noteTear\">" + listProduct[i].Note + "</div>");
 
                 result.Append("<div class=\"img\">");
-                    result.Append("<a href=\"/san-pham/" + listProduct[i].Tag + ".html\" title=\"" + listProduct[i].Name + "\"><img src=\"" + listProduct[i].ImageLinkThumb + "\" alt=\"" + listProduct[i].Name + "\" /></a>");
+                    result.Append("<a href=\"/san-pham/" + listProduct[i].Tag + "\" title=\"" + listProduct[i].Name + "\"><img src=\"" + listProduct[i].ImageLinkThumb + "\" alt=\"" + listProduct[i].Name + "\" /></a>");
                     result.Append("</div>");
                     result.Append("<a class=\"name\" href=\"/san-pham/" + listProduct[i].Tag + "\" title=\"" + listProduct[i].Name + "\">" + listProduct[i].Name + "</a>");
                     result.Append("<div class=\"boxItem\">");
@@ -80,7 +80,7 @@ namespace Bontana.Controllers.DisplayCustom
                     result.Append("<span class=\"price\">" + string.Format("{0:#,#}", listProduct[i].Price) + "đ</span>");
                     result.Append("</div>");
                     result.Append("<div class=\"boxSale\">");
-                    result.Append("<a href=\"\" title=\"\"></a>");
+                    result.Append("<a href=\"#\" title=\"\"></a>");
                     result.Append("</div>");
                     result.Append("</div>");
                     result.Append("</div>");
@@ -180,7 +180,7 @@ namespace Bontana.Controllers.DisplayCustom
                     result.Append("<span class=\"price\">" + string.Format("{0:#,#}", listProduct[j].Price) + "đ</span>");
                         result.Append("</div>");
                         result.Append("<div class=\"boxSale\">");
-                        result.Append("<a href=\"\" title=\"\"></a>");
+                        result.Append("<a href=\"#\" title=\"\"></a>");
                         result.Append("</div>");
                         result.Append("</div>");
                         result.Append(" </div>");
